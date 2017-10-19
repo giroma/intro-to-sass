@@ -1,6 +1,9 @@
 // Place all the styles related to the Films controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$color_grey: #999;
+$color_red: #990000;
+$family: Helvetica, Arial, sans-serif;
 
 *,
 *::before,
@@ -10,7 +13,7 @@
 
 html {
   box-sizing: inherit;
-  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-family: 'Source Sans Pro', $family;
   font-size: 20px;
   line-height: 1.35;
   height: 100%;
@@ -43,12 +46,12 @@ figure {
 article {
   width: 75%;
   margin: 1rem auto 3rem;
-}
 
-article > header {
-  overflow: auto;
-}
 
+  header {
+    overflow: auto;
+  }
+}
 .home {
   height: 100%;
   max-width: 1200px;
@@ -64,28 +67,28 @@ article > header {
   float: left;
   width: 25%;
   padding: 1rem;
-}
 
-.hero-logo-container > .hero-logo {
-  display: block;
-  width: 150px;
-  margin: auto;
-}
 
+  .hero-logo {
+    display: block;
+    width: 150px;
+    margin: auto;
+  }
+}
 .hero-title-container {
   float: left;
   width: 75%;
-}
 
-.hero-title-container > .hero-title {
-  font-size: 3rem;
-  margin: 2rem 0 0;
-  color: #990000;
-}
+  .hero-title {
+    font-size: 3rem;
+    margin: 2rem 0 0;
+    color: $color_red;
+  }
 
-.hero-title-container > .hero-tagline {
-  color: #999;
-  margin: 0.25rem 0;
+  .hero-tagline {
+    color: $color_grey;
+    margin: 0.25rem 0;
+  }
 }
 
 .article-poster {
@@ -94,17 +97,18 @@ article > header {
     margin-right: 1.5rem;
 }
 
-.article-title > h2 {
+.article-title {
+  h2 {
     font-size: 1.2em;
-    color: #999;
-}
+    color: $color_grey;
+  }
 
-.article-title > h1 {
+  h1 {
     font-size: 2rem;
     margin-bottom: 0;
-    color: #990000;
+    color: $color_red;
+  }
 }
-
 // This mixin provides a fancier clearfix than using the overflow property!
 @mixin clearfix {
   &::after {
